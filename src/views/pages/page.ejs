@@ -1,0 +1,24 @@
+<%- include('../partials/header', { title: 'Página Generada - Biblioteca de Babel' }) %>
+
+	<div class="row">
+		<div class="col-12">
+			<h1 class="text-center mb-4">Página Generada</h1>
+		</div>
+		<div class="col-12 mb-4 text-center">
+			<p><strong>Ubicación:</strong> Hexágono <%= location.hexagon %>, Pared <%= location.wall %>, Estante <%= location.shelf %>, Volumen <%= location.volume %>, Página <%= location.page %>
+			</p>
+		</div>
+		<div class="col-12 text-center">
+			<pre class="bg-light p-3 rounded"><%= text %></pre>
+		</div>
+		<div class="col-12 text-center">
+			<a href="/page?hexagon=<%= location.hexagon %>&wall=<%= location.wall %>&shelf=<%= location.shelf %>&volume=<%= location.volume %>&page=<%= prevPage %>&alphabet=<%= encodeURIComponent(alphabetInput) %>"
+				class="btn <%= prevButtonClass %>">Página Anterior</a>
+			<a href="/" class="btn btn-secondary mx-2">Volver al Inicio</a>
+			<a href="/page?hexagon=<%= location.hexagon %>&wall=<%= location.wall %>&shelf=<%= location.shelf %>&volume=<%= location.volume %>&page=<%= nextPage %>&alphabet=<%= encodeURIComponent(alphabetInput) %>"
+				class="btn <%= nextButtonClass %>">Página Siguiente</a>
+		</div>
+
+	</div>
+
+	<%- include('../partials/footer') %>

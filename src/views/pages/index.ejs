@@ -1,0 +1,63 @@
+<%- include('../partials/header', { title: 'Biblioteca de Babel' }) %>
+
+    <h1 class="text-center mb-4">Explora la Biblioteca</h1>
+    
+    <form action="/page" method="get" novalidate>
+        <!-- Información de ubicación -->
+        <fieldset class="border p-3 mb-4">
+            <legend class="w-auto px-2">Ubicación</legend>
+            <div class="row">
+                <div class="mb-3 col-12 col-md-4">
+                    <label for="hexagon" class="form-label">Hexágono:</label>
+                    <input type="text" id="hexagon" name="hexagon" class="form-control" placeholder="Ejemplo: a1b2c3"
+                        pattern="^[a-zA-Z0-9]+$" required>
+                    <div class="invalid-feedback">
+                        El hexágono solo puede contener letras y números.
+                    </div>
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                    <label for="wall" class="form-label">Pared (1-4):</label>
+                    <input type="number" id="wall" name="wall" class="form-control" min="1" max="4" required>
+                    <div class="invalid-feedback">
+                        Ingresa un número entre 1 y 4.
+                    </div>
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                    <label for="shelf" class="form-label">Estante (1-5):</label>
+                    <input type="number" id="shelf" name="shelf" class="form-control" min="1" max="5" required>
+                    <div class="invalid-feedback">
+                        Ingresa un número entre 1 y 5.
+                    </div>
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                    <label for="volume" class="form-label">Volumen (1-32):</label>
+                    <input type="number" id="volume" name="volume" class="form-control" min="1" max="32" required>
+                    <div class="invalid-feedback">
+                        Ingresa un número entre 1 y 32.
+                    </div>
+                </div>
+                <div class="mb-3 col-6 col-md-2">
+                    <label for="page" class="form-label">Página (1-410):</label>
+                    <input type="number" id="page" name="page" class="form-control" min="1" max="410" required>
+                    <div class="invalid-feedback">
+                        Ingresa un número entre 1 y 410.
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Configuración adicional -->
+        <fieldset class="border p-3 mb-4">
+            <legend class="w-auto px-2">Configuración</legend>
+            <div class="mb-3">
+                <label for="alphabet" class="form-label">Alfabeto:</label>
+                <input type="text" id="alphabet" name="alphabet" class="form-control"
+                    value="abcdefghijklmnopqrstuvwxyz,. " required>
+                <div class="form-text">Introduce los caracteres que deseas usar en el alfabeto.</div>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary w-100">Generar Página</button>
+    </form>
+
+    <%- include('../partials/footer') %>
